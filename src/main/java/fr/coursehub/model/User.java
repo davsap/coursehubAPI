@@ -1,155 +1,137 @@
 package fr.coursehub.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-@Entity(name="Utilisateurs")
-@Table(name="Utilisateurs")
+@Entity(name = "Utilisateurs")
+@Table(name = "Utilisateurs")
 public class User {
-	
-	public User() {}
-	
-	public Integer getId() {
-		return id;
-	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_utilisateur")
+    private Long id;
+    @Column(name = "nom")
+    private String nom;
+    @Column(name = "prenom")
+    private String prenom;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "pseudo")
+    private String pseudo;
+    @Column(name = "situation")
+    private String situation;
+    @Column(name = "password")
+    private String password;
+    @Column(name = "ville")
+    private String ville;
+    @Column(name = "zip")
+    private String zip;
+    @Column(name = "pays")
+    private String pays;
+    private String token;
 
-	public String getNom() {
-		return nom;
-	}
+    public User() {
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getPrenom() {
-		return prenom;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getPrenom() {
+        return prenom;
+    }
 
-	public String getPseudo() {
-		return pseudo;
-	}
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
 
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getSituation() {
-		return situation;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setSituation(String situation) {
-		this.situation = situation;
-	}
+    public String getPseudo() {
+        return pseudo;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getSituation() {
+        return situation;
+    }
 
-	public String getVille() {
-		return ville;
-	}
+    public void setSituation(String situation) {
+        this.situation = situation;
+    }
 
-	public void setVille(String ville) {
-		this.ville = ville;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getZip() {
-		return zip;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
+    public String getVille() {
+        return ville;
+    }
 
-	public String getPays() {
-		return pays;
-	}
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
 
-	public void setPays(String pays) {
-		this.pays = pays;
-	}
+    public String getZip() {
+        return zip;
+    }
 
-	
-	public String getToken() {
-		return token;
-	}
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
 
-	public void setToken(String token) {
-		this.token = token;
-	}
+    public String getPays() {
+        return pays;
+    }
 
+    public void setPays(String pays) {
+        this.pays = pays;
+    }
 
-	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	@Column(name="id_utilisateur")
-	private Integer id;
-	
-	@Column(name="nom")
-	private String nom;
-	
-	@Column(name="prenom")
-	private String prenom;
-	
-	@Column(name="email")
-	private String email;
-	
-	@Column(name="pseudo")
-	private String pseudo;
-	
-	@Column(name="situation") 
-	private String situation;
-	
-	@Column(name="password")
-	private String password;
-	
-	@Column(name="ville")
-	private String ville;
-	
-	@Column(name="zip")
-	private String zip;
-	
-	@Column(name="pays")
-	private String pays;
-	
-	private String token;
+    public String getToken() {
+        return token;
+    }
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", pseudo=" + pseudo
-				+ ", situation=" + situation + ", password=" + password + ", ville=" + ville + ", zip=" + zip
-				+ ", pays=" + pays + "]";
-	}
-	
-	
-		
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", pseudo=" + pseudo
+                + ", situation=" + situation + ", password=" + password + ", ville=" + ville + ", zip=" + zip
+                + ", pays=" + pays + "]";
+    }
+
 
 }

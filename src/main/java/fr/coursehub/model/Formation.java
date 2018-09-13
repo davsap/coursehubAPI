@@ -23,7 +23,7 @@ public class Formation {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_formation")
-	private Integer id;
+	private Long id;
 	
 	@Column(name="titre")
 	private String titre;
@@ -52,7 +52,7 @@ public class Formation {
 		this.sujets = new HashSet<>();
 	}
 
-	public Formation(Integer id, String titre, String description, String date, String image) {
+	public Formation(Long id, String titre, String description, String date, String image) {
 		this.id = id;
 		this.titre = titre;
 		this.description = description;
@@ -75,11 +75,11 @@ public class Formation {
 		this.sujets.add(sujet);
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

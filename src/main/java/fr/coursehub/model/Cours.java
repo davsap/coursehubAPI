@@ -17,7 +17,7 @@ public class Cours {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_cours")
-	private Integer id;
+	private Long id;
 	
 	@Column(name="titre")
 	private String titre;
@@ -37,11 +37,19 @@ public class Cours {
 	
 	public Cours() {}
 
-	public Integer getId() {
+	public Cours(Long id, String titre, String description, String contenu, String video) {
+		this.id = id;
+		this.titre = titre;
+		this.description = description;
+		this.contenu = contenu;
+		this.video = video;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
